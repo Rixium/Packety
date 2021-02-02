@@ -4,17 +4,22 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <LangVersion>9</LangVersion>
+        <PackageVersion>0.0.1</PackageVersion>
+        <Title>Packety</Title>
+        <Authors>YetiFace</Authors>
+        <RepositoryUrl>https://github.com/Rixium/Packety</RepositoryUrl>
     </PropertyGroup>
-
+    
+    <PropertyGroup>
+        <PackageLicenseFile>license.txt</PackageLicenseFile>
+    </PropertyGroup>
+    
     <ItemGroup>
       <PackageReference Include="Facepunch.Steamworks" Version="2.3.3" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Remove="steam_api64.dll" />
-      <Content Include="steam_api64.dll">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Content>
+        <None Include="license.txt" Pack="true" PackagePath=""/>
     </ItemGroup>
-
+    
 </Project>
