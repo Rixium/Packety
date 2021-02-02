@@ -16,9 +16,7 @@ namespace Packety
         INetworkMessagePackager MessagePackager { get; }
         SocketManager CreateSession(string port);
         ConnectionManager JoinSession(string ip, string port);
-
         void Update();
-
         void SetServerNetworkListener(INetworkServerListener networkServerListener);
         void SetClientNetworkListener(INetworkClientListener clientNetworkListener);
         void SendMessage(byte[] data);

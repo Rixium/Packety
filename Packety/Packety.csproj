@@ -10,4 +10,11 @@
       <PackageReference Include="Facepunch.Steamworks" Version="2.3.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="steam_api64.dll" />
+      <Content Include="steam_api64.dll">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

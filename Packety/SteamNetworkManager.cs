@@ -27,8 +27,9 @@ namespace Packety
 
         public SocketManager CreateSession(string port)
         {
-            var netAddress = NetAddress.AnyIp(ushort.Parse(port));
-            Server = SteamNetworkingSockets.CreateNormalSocket<SocketManager>(netAddress);
+            var parsedPort = ushort.Parse(port);
+            var netAddress = NetAddress.AnyIp(parsedPort);
+            Server = SteamNetworkingSockets.CreateNormalSocket<Server>(netAddress);
 
             SteamMatchmaking.OnLobbyCreated += (result, lobby) => OnLobbyCreated(result, lobby, port);
             SteamMatchmaking.CreateLobbyAsync();
@@ -45,7 +46,7 @@ namespace Packety
 
         public ConnectionManager JoinSession(string ip, string port)
         {
-            Client = SteamNetworkingSockets.ConnectNormal<ConnectionManager>(NetAddress.From(ip, ushort.Parse(port)));
+            Client = SteamNetworkingSockets.ConnectNormal<Client>(NetAddress.From(ip, ushort.Parse(port)));
             return Client;
         }
 
